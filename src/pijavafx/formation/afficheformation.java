@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pijavafx.offre;
+package pijavafx.formation;
 
 import java.io.IOException;
 import javafx.application.Application;
@@ -18,23 +18,21 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Lenovo
+ * @author fedi
  */
-public class interfoffre extends Application {
+public class afficheformation extends Application {
     
     @Override
     public void start(Stage primaryStage) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/pijavafx/offre/offreFXML.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/pijavafx/formation/afficheformationFXML.fxml"));
             Scene scene = new Scene(root);
-            primaryStage.setTitle("offre");
+            primaryStage.setTitle("Formations");
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
-        
-       
     }
 
     /**
