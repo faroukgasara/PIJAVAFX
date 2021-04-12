@@ -54,14 +54,14 @@
             <TextField fx:id="t_description" prefHeight="16.0" prefWidth="159.0" />
          </children>
       </VBox>
-      <TableView layoutX="404.0" layoutY="14.0" prefHeight="394.0" prefWidth="454.0">
+      <TableView fx:id="table" layoutX="404.0" layoutY="14.0" prefHeight="394.0" prefWidth="454.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="id" />
-          <TableColumn prefWidth="75.0" text="specialite" />
-            <TableColumn prefWidth="75.0" text="localisation" />
-            <TableColumn prefWidth="75.0" text="nb_dem" />
-            <TableColumn prefWidth="75.0" text="description" />
-            <TableColumn prefWidth="75.0" text="imagesoffre" />
+          <TableColumn fx:id="tab_id" prefWidth="75.0" text="id" />
+          <TableColumn fx:id="tab_specialite" prefWidth="75.0" text="specialite" />
+            <TableColumn fx:id="tab_localisation" prefWidth="75.0" text="localisation" />
+            <TableColumn fx:id="tab_nb_dem" prefWidth="75.0" text="nb_dem" />
+            <TableColumn fx:id="tab_description" prefWidth="75.0" text="description" />
+            <TableColumn fx:id="tab_imagesoffre" prefWidth="75.0" text="imagesoffre" />
         </columns>
       </TableView>
       <Button layoutX="102.0" layoutY="331.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="131.0" text="updete">
