@@ -17,6 +17,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.metamodel.SingularAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -76,6 +77,8 @@ public class Offre implements Serializable {
         this.description = description;
         this.imagesoffre = imagesoffre;
     }
+
+   
 
     public Integer getId() {
         return id;
@@ -157,5 +160,7 @@ public class Offre implements Serializable {
     public String toString() {
         return "pijavafx.offre.Offre[ id=" + id + " ]";
     }
+
+   
     
 }
