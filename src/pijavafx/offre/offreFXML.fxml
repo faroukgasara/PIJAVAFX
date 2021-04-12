@@ -45,13 +45,14 @@
             </Label>
          </children>
       </VBox>
-      <VBox layoutX="92.0" layoutY="7.0" prefHeight="200.0" prefWidth="159.0" spacing="15.0">
+      <VBox layoutX="92.0" layoutY="7.0" prefHeight="267.0" prefWidth="159.0" spacing="15.0">
          <children>
             <TextField fx:id="t_id" />
             <TextField fx:id="t_specialite" />
             <TextField fx:id="t_localisation" />
             <TextField fx:id="t_nb_dem" />
             <TextField fx:id="t_description" prefHeight="16.0" prefWidth="159.0" />
+            <TextField fx:id="t_imagesoffre" />
          </children>
       </VBox>
       <TableView fx:id="table" layoutX="404.0" layoutY="14.0" prefHeight="394.0" prefWidth="454.0">
@@ -79,6 +80,5 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <TextField fx:id="t_imagesoffre" layoutX="97.0" layoutY="211.0" />
    </children>
 </AnchorPane>
