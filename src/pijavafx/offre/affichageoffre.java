@@ -28,16 +28,6 @@ public class affichageoffre {
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
-    }
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        launch(args);
-    }
-    
-}
-
-    
+    }}
+         
 
