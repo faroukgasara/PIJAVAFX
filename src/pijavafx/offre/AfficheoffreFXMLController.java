@@ -5,7 +5,10 @@
  */
 package pijavafx.offre;
 
+
 import pijavafx.formation.*;
+
+
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -30,6 +33,7 @@ import pijavafx.events.utils.BDConnector;
 public class AfficheoffreFXMLController implements Initializable {
 
    @FXML
+    @FXML
     private TableView<Offre> table;
     @FXML
     private TableColumn<Offre, Integer> tab_id;
@@ -37,6 +41,9 @@ public class AfficheoffreFXMLController implements Initializable {
     private TableColumn<Offre, String> tab_specialite;
     @FXML
     private TableColumn<Offre, String> tab_localisation ;
+
+    private TableColumn<Offre, String> tab_location;
+
     @FXML
     private TableColumn<Offre, Integer> tab_nb_dem;
     @FXML
@@ -49,11 +56,18 @@ public class AfficheoffreFXMLController implements Initializable {
 
     /**
      * Initializes the controller class.
+
      * @param url
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        try {
+
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        
+        try {
             Connection conx = BDConnector.driverBD();
             ResultSet rs = conx.createStatement().executeQuery("select * from offre");
             
@@ -66,14 +80,27 @@ public class AfficheoffreFXMLController implements Initializable {
                     
                    
         } catch (SQLException ex) {
+
             Logger.getLogger(offreFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
          tab_id.setCellValueFactory(new PropertyValueFactory<>("id"));
                     tab_specialite.setCellValueFactory(new PropertyValueFactory<>("specialite"));
                     tab_localisation.setCellValueFactory(new PropertyValueFactory<>("localisation"));
+
+            Logger.getLogger(AfficheoffreFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         tab_id.setCellValueFactory(new PropertyValueFactory<>("id"));
+                    tab_specialite.setCellValueFactory(new PropertyValueFactory<>("specialite"));
+                    tab_location.setCellValueFactory(new PropertyValueFactory<>("localisation"));
+
                     tab_nb_dem.setCellValueFactory(new PropertyValueFactory<>("nb_dem"));
                     tab_description.setCellValueFactory(new PropertyValueFactory<>("desception"));
                     tab_imagesoffre.setCellValueFactory(new PropertyValueFactory<>("imagesoffre"));
                     
                     table.setItems(oblist);
+
     } }   
+
+    }    
+    
+}

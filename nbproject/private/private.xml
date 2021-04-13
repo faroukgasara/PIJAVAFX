@@ -5,6 +5,7 @@
         <group>
             <file>file:/C:/Users/Lenovo/Documents/GitHub/PIJAVAFX/src/pijavafx/offre/affichageoffre.java</file>
             <file>file:/C:/Users/Lenovo/Documents/GitHub/PIJAVAFX/src/pijavafx/offre/interfoffre.java</file>
+
             <file>file:/C:/Users/Lenovo/Documents/GitHub/PIJAVAFX/src/pijavafx/formation/afficheformation.java</file>
             <file>file:/C:/Users/Lenovo/Documents/GitHub/PIJAVAFX/src/pijavafx/offre/Offre.java</file>
             <file>file:/C:/Users/Lenovo/Documents/GitHub/PIJAVAFX/src/pijavafx/offre/AfficheoffreFXMLController.java</file>
@@ -13,6 +14,13 @@
             <file>file:/C:/Users/Lenovo/Documents/GitHub/PIJAVAFX/src/categorieoffre/java.java</file>
             <file>file:/C:/Users/Lenovo/Documents/GitHub/PIJAVAFX/src/pijavafx/offre/CategorieOffre.java</file>
             <file>file:/C:/Users/Lenovo/Documents/GitHub/PIJAVAFX/src/pijavafx/offre/offreCrud.java</file>
+
+            <file>file:/C:/Users/Lenovo/Documents/GitHub/PIJAVAFX/src/pijavafx/offre/offreFXML.fxml</file>
+            <file>file:/C:/Users/Lenovo/Documents/GitHub/PIJAVAFX/src/pijavafx/events/controller/AdminEventsController.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/GitHub/PIJAVAFX/src/pijavafx/offre/AfficheoffreFXMLController.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/GitHub/PIJAVAFX/src/pijavafx/offre/offreFXMLController.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/GitHub/PIJAVAFX/src/pijavafx/formation/afficheformationFXML.fxml</file>
+
         </group>
     </open-files>
 </project-private>
