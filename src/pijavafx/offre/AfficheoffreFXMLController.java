@@ -40,7 +40,11 @@ public class AfficheoffreFXMLController implements Initializable {
     @FXML
     private TableColumn<Offre, String> tab_specialite;
     @FXML
+
     private TableColumn<Offre, String> tab_localisation ;
+
+    private TableColumn<Offre, String> tab_location;
+
 
     private TableColumn<Offre, String> tab_location;
 
@@ -56,6 +60,7 @@ public class AfficheoffreFXMLController implements Initializable {
 
     /**
      * Initializes the controller class.
+
 
      * @param url
      */
@@ -86,7 +91,7 @@ public class AfficheoffreFXMLController implements Initializable {
          tab_id.setCellValueFactory(new PropertyValueFactory<>("id"));
                     tab_specialite.setCellValueFactory(new PropertyValueFactory<>("specialite"));
                     tab_localisation.setCellValueFactory(new PropertyValueFactory<>("localisation"));
-
+	
             Logger.getLogger(AfficheoffreFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
          tab_id.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -98,6 +103,7 @@ public class AfficheoffreFXMLController implements Initializable {
                     tab_imagesoffre.setCellValueFactory(new PropertyValueFactory<>("imagesoffre"));
                     
                     table.setItems(oblist);
+
 
     } }   
 
