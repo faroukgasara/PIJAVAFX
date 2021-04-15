@@ -5,7 +5,7 @@
  */
 package pijavafx.offre;
 
-import pijavafx.formation.*;
+
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;

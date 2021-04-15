@@ -7,6 +7,7 @@ package pijavafx.offre;
 
 import java.io.IOException;
 import javafx.application.Application;
+import static javafx.application.Application.launch;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -20,14 +21,14 @@ import javafx.stage.Stage;
  *
  * @author Lenovo
  */
-public class interfoffre extends Application {
+public class intercategorieoffre extends Application {
     
     @Override
     public void start(Stage primaryStage) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/pijavafx/offre/offreFXML.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/pijavafx/offre/categorieoffreFXML.fxml"));
             Scene scene = new Scene(root);
-            primaryStage.setTitle("offre");
+            primaryStage.setTitle("categorieoffre");
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException ex) {
@@ -45,3 +46,6 @@ public class interfoffre extends Application {
     
     
 }
+
+    
+

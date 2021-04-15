@@ -161,6 +161,10 @@ public class Offre implements Serializable {
         return "pijavafx.offre.Offre[ id=" + id + " ]";
     }
 
+    String getType() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
    
     
 }

@@ -28,6 +28,7 @@ public class affichageoffre {
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
+        
     }}
          
 
