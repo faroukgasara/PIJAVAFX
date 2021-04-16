@@ -12,21 +12,20 @@ import java.sql.Date;
  * @author farou
  */
 public class EventEntity {
-    private int id ;
-    private String date_at;
-    private String title ; 
-    private String type;
-    private String description;
-    private String localitation;
-    private int id_societe;
-    private String picture;
-    private int viewed;
+    int id ;
+    Date date_at;
+    String title ; 
+    String type;
+    String description;
+    String localitation;
+    int id_societe;
+    int viewed;
 
     public EventEntity() {
     }
     
 
-    public EventEntity(int id, String date_at, String title, String type, String description, String localitation, int id_societe, String picture, int viewed) {
+    public EventEntity(int id, Date date_at, String title, String type, String description, String localitation, int id_societe, int viewed) {
         this.id = id;
         this.date_at = date_at;
         this.title = title;
@@ -34,7 +33,6 @@ public class EventEntity {
         this.description = description;
         this.localitation = localitation;
         this.id_societe = id_societe;
-        this.picture = picture;
         this.viewed = viewed;
     }
 
@@ -42,7 +40,7 @@ public class EventEntity {
         return id;
     }
 
-    public String getDate_at() {
+    public Date getDate_at() {
         return date_at;
     }
 
@@ -66,9 +64,7 @@ public class EventEntity {
         return id_societe;
     }
 
-    public String getPicture() {
-        return picture;
-    }
+
 
     public int getViewed() {
         return viewed;
@@ -78,7 +74,7 @@ public class EventEntity {
         this.id = id;
     }
 
-    public void setDate_at(String date_at) {
+    public void setDate_at(Date date_at) {
         this.date_at = date_at;
     }
 
@@ -102,9 +98,6 @@ public class EventEntity {
         this.id_societe = id_societe;
     }
 
-    public void setPicture(String picture) {
-        this.picture = picture;
-    }
 
     public void setViewed(int viewed) {
         this.viewed = viewed;
@@ -112,7 +105,7 @@ public class EventEntity {
 
     @Override
     public String toString() {
-        return "EventEntity{" + "id=" + id + ", date_at=" + date_at + ", title=" + title + ", type=" + type + ", description=" + description + ", localitation=" + localitation + ", id_societe=" + id_societe + ", picture=" + picture + ", viewed=" + viewed + '}';
+        return "EventEntity{" + "id=" + id + ", date_at=" + date_at + ", title=" + title + ", type=" + type + ", description=" + description + ", localitation=" + localitation + ", id_societe=" + id_societe + " viewed=" + viewed + '}';
     }
     
     

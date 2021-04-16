@@ -7,7 +7,6 @@ package pijavafx.events;
 
 import java.io.IOException;
 import javafx.application.Application;
-import static javafx.application.Application.launch;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -21,14 +20,14 @@ import javafx.stage.Stage;
  *
  * @author farou
  */
-public class AddEvent extends Application {
+public class SocEvents extends Application {
     
-@Override
+    @Override
     public void start(Stage primaryStage) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/pijavafx/events/gui/addevent.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/pijavafx/events/gui/SocEvents.fxml"));
             Scene scene = new Scene(root);
-            primaryStage.setTitle("Add Event");
+            primaryStage.setTitle("Soc Events");
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException ex) {

@@ -28,7 +28,7 @@ public class AdminEvents extends Application {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/pijavafx/events/gui/AdminEvents.fxml"));
             Scene scene = new Scene(root);
-            primaryStage.setTitle("Events");
+            primaryStage.setTitle("Admin Events");
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException ex) {

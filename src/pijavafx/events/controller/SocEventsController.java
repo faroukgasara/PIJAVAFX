@@ -7,7 +7,6 @@ package pijavafx.events.controller;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,9 +17,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -28,9 +24,7 @@ import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 import pijavafx.events.entites.EventEntity;
 import pijavafx.events.service.GestionEvent;
 
@@ -39,8 +33,8 @@ import pijavafx.events.service.GestionEvent;
  *
  * @author farou
  */
-public class AdminEventsController implements Initializable {
-
+public class SocEventsController implements Initializable {
+    
     @FXML
     private Button btnload;
     @FXML
@@ -66,6 +60,7 @@ public class AdminEventsController implements Initializable {
     private AnchorPane rootPane;
     @FXML
     private Button btnparticipant;
+    
     @FXML
     private TextField recherche;
 
@@ -74,13 +69,14 @@ public class AdminEventsController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
         ObservableList<EventEntity> events = GestionEvent.AfficheToutEvent();
+        
         columnId.setCellValueFactory(new PropertyValueFactory<>("id"));
         columnDate.setCellValueFactory(new PropertyValueFactory<>("date_at"));
         columnTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
         columnType.setCellValueFactory(new PropertyValueFactory<>("type"));
         columnViewed.setCellValueFactory(new PropertyValueFactory<>("viewed"));
+        
         FilteredList<EventEntity> filtredData = new FilteredList<>(events, b -> true);
         recherche.textProperty().addListener(((observable, oldValue, newValue) -> {
             filtredData.setPredicate(event -> {
@@ -124,8 +120,8 @@ public class AdminEventsController implements Initializable {
             });
             return row;
         });
-    }
-
+    }  
+    
     @FXML
     public void AfficheToutEvent(ActionEvent event) {
         ObservableList<EventEntity> events = GestionEvent.AfficheToutEvent();
@@ -142,8 +138,7 @@ public class AdminEventsController implements Initializable {
     private void DeleteSelectedRow(ActionEvent event) {
         GestionEvent ge = new GestionEvent();
         ge.deleteEvent(tableEvents.getSelectionModel().getSelectedItem());
-        AfficheToutEvent(event);
-        
+        tableEvents.getItems().removeAll(tableEvents.getSelectionModel().getSelectedItem());
     }
 
     @FXML
@@ -170,5 +165,5 @@ public class AdminEventsController implements Initializable {
             Logger.getLogger(AdminEventsController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    
 }
