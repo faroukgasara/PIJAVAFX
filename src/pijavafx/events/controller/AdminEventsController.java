@@ -46,8 +46,6 @@ public class AdminEventsController implements Initializable {
     @FXML
     private TableView<EventEntity> tableEvents;
     @FXML
-    private TableColumn<EventEntity, String> columnId;
-    @FXML
     private TableColumn<EventEntity, String> columnDate;
     @FXML
     private TableColumn<EventEntity, String> columnTitle;
@@ -76,7 +74,6 @@ public class AdminEventsController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
         ObservableList<EventEntity> events = GestionEvent.AfficheToutEvent();
-        columnId.setCellValueFactory(new PropertyValueFactory<>("id"));
         columnDate.setCellValueFactory(new PropertyValueFactory<>("date_at"));
         columnTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
         columnType.setCellValueFactory(new PropertyValueFactory<>("type"));
@@ -129,7 +126,6 @@ public class AdminEventsController implements Initializable {
     @FXML
     public void AfficheToutEvent(ActionEvent event) {
         ObservableList<EventEntity> events = GestionEvent.AfficheToutEvent();
-        columnId.setCellValueFactory(new PropertyValueFactory<>("id"));
         columnDate.setCellValueFactory(new PropertyValueFactory<>("date_at"));
         columnTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
         columnType.setCellValueFactory(new PropertyValueFactory<>("type"));
@@ -164,7 +160,7 @@ public class AdminEventsController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/pijavafx/events/gui/participantevent.fxml"));
             AnchorPane pane = (AnchorPane) loader.load();
             ParticipanteventController uc = loader.getController();
-            uc.getData(rowData);
+            uc.getData(rowData,tableEvents.getSelectionModel().getSelectedItem().getId());
             rootPane.getChildren().setAll(pane);
         } catch (IOException ex) {
             Logger.getLogger(AdminEventsController.class.getName()).log(Level.SEVERE, null, ex);

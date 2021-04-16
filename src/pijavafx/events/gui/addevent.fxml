@@ -9,19 +9,25 @@
 <AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pijavafx.events.controller.AddeventController">
    <children>
   
-      <TextField fx:id="tftitle" layoutX="197.0" layoutY="62.0" />
-      <TextField fx:id="tftype" layoutX="197.0" layoutY="107.0" />
-      <TextField fx:id="tfdescription" layoutX="197.0" layoutY="156.0" />
-      <TextField fx:id="tflocalitation" layoutX="197.0" layoutY="207.0" />
-      <TextField fx:id="tfid_societe" layoutX="200.0" layoutY="243.0" />
+      <TextField fx:id="tftitle" layoutX="218.0" layoutY="62.0" />
+      <TextField fx:id="tftype" layoutX="218.0" layoutY="109.0" />
+      <TextField fx:id="tfdescription" layoutX="218.0" layoutY="156.0" />
+      <TextField fx:id="tflocalitation" layoutX="218.0" layoutY="204.0" />
+      <TextField fx:id="tfid_societe" layoutX="218.0" layoutY="248.0" />
       <Button fx:id="btnvalider" layoutX="266.0" layoutY="354.0" mnemonicParsing="false" onAction="#addEvent" text="Valider" />
-      <Label layoutX="54.0" layoutY="66.0" text="title" />
-      <Label layoutX="40.0" layoutY="111.0" text="type" />
-      <Label layoutX="54.0" layoutY="160.0" text="description" />
-      <Label layoutX="53.0" layoutY="211.0" text="localisation" />
-      <Label layoutX="61.0" layoutY="260.0" text="id_soc" />
-      <Label layoutX="64.0" layoutY="288.0" text="date" />
-      <DatePicker fx:id="date_at" layoutX="179.0" layoutY="293.0" />
+      <Label layoutX="150.0" layoutY="66.0" text="Title" />
+      <Label layoutX="150.0" layoutY="113.0" text="Type" />
+      <Label layoutX="151.0" layoutY="160.0" text="Description" />
+      <Label layoutX="152.0" layoutY="208.0" text="Localisation" />
+      <Label layoutX="153.0" layoutY="252.0" text="id_soc" />
+      <Label layoutX="154.0" layoutY="297.0" text="Date" />
+      <DatePicker fx:id="date_at" layoutX="218.0" layoutY="293.0" />
       <Button fx:id="btn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#back" text="Back" />
+      <Label fx:id="titleerreur" layoutX="219.0" layoutY="89.0" prefHeight="17.0" prefWidth="162.0" />
+      <Label fx:id="typeerreur" layoutX="220.0" layoutY="136.0" prefHeight="17.0" prefWidth="162.0" />
+      <Label fx:id="descriptionerreur" layoutX="219.0" layoutY="184.0" prefHeight="17.0" prefWidth="162.0" />
+      <Label fx:id="locationerreur" layoutX="220.0" layoutY="230.0" prefHeight="17.0" prefWidth="162.0" />
+      <Label fx:id="idsocerreur" layoutX="220.0" layoutY="275.0" prefHeight="17.0" prefWidth="162.0" />
+      <Label fx:id="dateerreur" layoutX="219.0" layoutY="319.0" prefHeight="17.0" prefWidth="162.0" />
    </children>
 </AnchorPane>

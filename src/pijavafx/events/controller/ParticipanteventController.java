@@ -36,7 +36,6 @@ public class ParticipanteventController implements Initializable {
 
     @FXML
     private TableView<ParticipantE> tablepar;
-    @FXML
     private TableColumn<ParticipantE, String> columnId;
     @FXML
     private TableColumn<ParticipantE, String> columnnom;
@@ -52,6 +51,8 @@ public class ParticipanteventController implements Initializable {
     private Button back;
     @FXML
     private AnchorPane rootPane;
+    @FXML
+    private Button load;
 
     /**
      * Initializes the controller class.
@@ -61,16 +62,14 @@ public class ParticipanteventController implements Initializable {
 
     }
 
-    public void getData(EventEntity rowData) {
+    public void getData(EventEntity rowData,int id) {
         System.out.println(rowData);
-        ObservableList<ParticipantE> participant = GestionEvent.AfficheParticipant(rowData.getId());
+        ObservableList<ParticipantE> participant = GestionEvent.AfficheParticipant(id);
         System.out.println(participant.toString());
 
-        columnId.setCellValueFactory(new PropertyValueFactory<>("id"));
         columnnom.setCellValueFactory(new PropertyValueFactory<>("nom"));
         columnage.setCellValueFactory(new PropertyValueFactory<>("age"));
         columnmail.setCellValueFactory(new PropertyValueFactory<>("mail"));
-        //tablepar.setItems(participant);
         FilteredList<ParticipantE> filtredData = new FilteredList<>(participant, b -> true);
         recherche.textProperty().addListener(((observable, oldValue, newValue) -> {
             filtredData.setPredicate(par -> {
@@ -101,7 +100,7 @@ public class ParticipanteventController implements Initializable {
     private void DeleteSelectedRow(ActionEvent event) {
         GestionEvent ge = new GestionEvent();
         ge.deletePar(tablepar.getSelectionModel().getSelectedItem());
-        tablepar.getItems().remove(tablepar.getSelectionModel().getSelectedItem());
+        //tablepar.getItems().remove(tablepar.getSelectionModel().getSelectedItem());
     }
 
     @FXML
@@ -112,6 +111,16 @@ public class ParticipanteventController implements Initializable {
     private void back(ActionEvent event) {
         try {
             AnchorPane pane = FXMLLoader.load(getClass().getResource("/pijavafx/events/gui/AdminEvents.fxml"));
+            rootPane.getChildren().setAll(pane);
+        } catch (IOException ex) {
+            Logger.getLogger(AdminEventsController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void load(ActionEvent event) {
+                try {
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/pijavafx/events/gui/participantevent.fxml"));
             rootPane.getChildren().setAll(pane);
         } catch (IOException ex) {
             Logger.getLogger(AdminEventsController.class.getName()).log(Level.SEVERE, null, ex);

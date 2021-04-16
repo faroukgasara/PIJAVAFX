@@ -131,7 +131,6 @@ public class SocEventsController implements Initializable {
         columnType.setCellValueFactory(new PropertyValueFactory<>("type"));
         columnViewed.setCellValueFactory(new PropertyValueFactory<>("viewed"));
         tableEvents.setItems(events);
-
     }
 
     @FXML
@@ -159,7 +158,7 @@ public class SocEventsController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/pijavafx/events/gui/participantevent.fxml"));
             AnchorPane pane = (AnchorPane) loader.load();
             ParticipanteventController uc = loader.getController();
-            uc.getData(rowData);
+            uc.getData(rowData,tableEvents.getSelectionModel().getSelectedItem().getId());
             rootPane.getChildren().setAll(pane);
         } catch (IOException ex) {
             Logger.getLogger(AdminEventsController.class.getName()).log(Level.SEVERE, null, ex);

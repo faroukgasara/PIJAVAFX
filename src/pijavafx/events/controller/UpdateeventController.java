@@ -21,9 +21,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import pijavafx.events.entites.EventEntity;
 import pijavafx.events.service.GestionEvent;
@@ -57,6 +59,16 @@ public class UpdateeventController implements Initializable {
     private DatePicker date_at;
     @FXML
     private Button btnback;
+    @FXML
+    private Label titleerreur;
+    @FXML
+    private Label typeerreur;
+    @FXML
+    private Label descriptionerreur;
+    @FXML
+    private Label locationerreur;
+    @FXML
+    private Label dateerreur;
 
     /**
      * Initializes the controller class.
@@ -64,6 +76,7 @@ public class UpdateeventController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         tfid.setEditable(false);
+        tfid.setVisible(false);
         tfviewed.setEditable(false);
         tfidsoc.setEditable(false);
     }
@@ -83,6 +96,46 @@ public class UpdateeventController implements Initializable {
 
     @FXML
     private void updateevent(ActionEvent event) {
+
+        //title
+        if (tftitle.getText().isEmpty()) {
+            titleerreur.setText("Title is Empty");
+            titleerreur.setTextFill(Color.rgb(210, 117, 84));
+        } else if (!tftitle.getText().isEmpty()) {
+            titleerreur.setText("");
+        }
+
+        //type
+        if (tftype.getText().isEmpty()) {
+            typeerreur.setText("Type is Empty");
+            typeerreur.setTextFill(Color.rgb(210, 117, 84));
+        } else if (!tftype.getText().isEmpty()) {
+            typeerreur.setText("");
+        }
+
+        //desc
+        if (tfdescription.getText().isEmpty()) {
+            descriptionerreur.setText("Description is Empty");
+            descriptionerreur.setTextFill(Color.rgb(210, 117, 84));
+        } else if (!tfdescription.getText().isEmpty()) {
+            descriptionerreur.setText("");
+        }
+
+        //loca
+        if (tflocalitation.getText().isEmpty()) {
+            locationerreur.setText("Localisation is Empty");
+            locationerreur.setTextFill(Color.rgb(210, 117, 84));
+        } else if (!tflocalitation.getText().isEmpty()) {
+            locationerreur.setText("");
+        }
+
+        //date
+        if (date_at.getValue() == null) {
+            dateerreur.setText("Select Date");
+            dateerreur.setTextFill(Color.rgb(210, 117, 84));
+        } else if (date_at.getValue() != null) {
+            dateerreur.setText("");
+        }
         LocalDate locald = date_at.getValue();
         Date date = Date.valueOf(locald);
         EventEntity e = new EventEntity(Integer.parseInt(tfid.getText()), date, tftitle.getText(), tftype.getText(),

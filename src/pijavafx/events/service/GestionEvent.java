@@ -129,17 +129,13 @@ public class GestionEvent {
             stmt = conx.createStatement();
             rs = stmt.executeQuery("SELECT * FROM `participation_e` WHERE `id_evenement` = " + id + " ");
             ObservableList<ParticipantE> participant = FXCollections.observableArrayList();
-            int[] tab = new int[5];
+            int[] tab = new int[100];
             int i = 0;
             while (rs.next()) {
                 int idd = rs.getInt("id_participant");
                 tab[i] = rs.getInt("id_participant");
                 i = i + 1;
             }
-            for (int j : tab) {
-                System.out.println(j);
-            }
-            System.out.println(Arrays.toString(tab).replace("[", "(").replace("]", ")"));
             rs = stmt.executeQuery("SELECT * FROM `participant_e` WHERE `id` IN " + Arrays.toString(tab).replace("[", "(").replace("]", ")") + "");
             while (rs.next()) {
                 int iddd = rs.getInt("id");

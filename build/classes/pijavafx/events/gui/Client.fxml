@@ -6,25 +6,32 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="pijavafx.events.gui.ClientController">
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pijavafx.events.controller.ClientController">
    <children>
-      <AnchorPane id="AnchorPane" layoutX="14.0" layoutY="14.0" prefHeight="400.0" prefWidth="230.0">
+      <AnchorPane id="AnchorPane" fx:id="rootPane" layoutX="14.0" layoutY="134.0" prefHeight="346.0" prefWidth="230.0">
          <children>
-            <Label layoutX="80.0" layoutY="14.0" text="Participate" />
-            <TextField fx:id="eventid" layoutX="62.0" layoutY="60.0" />
-            <TextField fx:id="mail" layoutX="62.0" layoutY="111.0" />
-            <TextField fx:id="nom" layoutX="62.0" layoutY="158.0" />
-            <TextField fx:id="age" layoutX="62.0" layoutY="200.0" />
-            <Button fx:id="btnadd" layoutX="89.0" layoutY="266.0" mnemonicParsing="false" onAction="#addparticipatian" text="Button" />
+            <Label layoutX="87.0" layoutY="51.0" text="Participate" />
+            <TextField fx:id="eventid" layoutX="46.0" layoutY="80.0" />
+            <TextField fx:id="mail" layoutX="60.0" layoutY="119.0" />
+            <TextField fx:id="nom" layoutX="60.0" layoutY="194.0" />
+            <TextField fx:id="age" layoutX="60.0" layoutY="258.0" />
+            <Button fx:id="btnadd" layoutX="89.0" layoutY="312.0" mnemonicParsing="false" onAction="#addparticipatian" text="Button" />
+            <Label layoutX="23.0" layoutY="123.0" text="Mail" />
+            <Label layoutX="21.0" layoutY="198.0" text="Nom" />
+            <Label layoutX="24.0" layoutY="262.0" text="Age" />
+            <Label fx:id="mailerreur" layoutX="60.0" layoutY="153.0" prefHeight="17.0" prefWidth="149.0" />
+            <Label fx:id="nomerruer" layoutX="60.0" layoutY="227.0" prefHeight="17.0" prefWidth="149.0" />
+            <Label fx:id="ageerreur" layoutX="60.0" layoutY="286.0" prefHeight="17.0" prefWidth="149.0" />
+            <Label layoutX="60.0" layoutY="286.0" prefHeight="17.0" prefWidth="149.0" />
          </children>
       </AnchorPane>
-      <AnchorPane id="AnchorPane" layoutX="262.0" layoutY="38.0" prefHeight="433.0" prefWidth="399.0">
+      <AnchorPane id="AnchorPane" fx:id="rootPane" layoutX="262.0" layoutY="197.0" prefHeight="297.0" prefWidth="405.0">
          <children>
-            <TableView fx:id="tableEvents" layoutY="-38.0" prefHeight="471.0" prefWidth="399.0">
+            <TableView fx:id="tableEvents" layoutX="6.0" layoutY="21.0" prefHeight="267.0" prefWidth="391.0">
               <columns>
-                <TableColumn fx:id="columnID" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="columndescription" prefWidth="75.0" text="Description" />
                 <TableColumn fx:id="columnDATE" prefWidth="94.0" text="DATE" />
                   <TableColumn fx:id="columnTYPE" prefWidth="113.0" text="TYPE" />
                   <TableColumn fx:id="columnTITLE" prefWidth="111.0" text="TITLE" />
@@ -32,5 +39,11 @@
             </TableView>
          </children>
       </AnchorPane>
+      <TextField fx:id="recherche" layoutX="460.0" layoutY="172.0" prefHeight="25.0" prefWidth="193.0" />
+      <Label layoutX="377.0" layoutY="171.0" text="Search :">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
