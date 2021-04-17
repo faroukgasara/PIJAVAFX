@@ -107,7 +107,6 @@ public class GestionEvent {
         } catch (SQLException ex) {
             Logger.getLogger(GestionEvent.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     public static boolean deleteEvent(EventEntity e) {
@@ -190,7 +189,7 @@ public class GestionEvent {
             while (rs.next()) {
                 int idp = rs.getInt(1);
                 System.out.println(idp);
-                
+
                 String sql = "INSERT INTO `participation_e`(`id_evenement`, `id_participant`)"
                         + "VALUES(?,?) ";
                 pst = conx.prepareStatement(sql);
@@ -203,6 +202,61 @@ public class GestionEvent {
             Logger.getLogger(GestionEvent.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+    }
+
+    public static EventEntity AfficheEventInfo(int idd) {
+        try {
+            conx = BDConnector.driverBD();
+            stmt = conx.createStatement();
+            rs = stmt.executeQuery("SELECT * FROM evenement WHERE id ='" + idd + "'");
+
+            EventEntity event = new EventEntity();
+
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                Date date = rs.getDate("date_at");
+                String title = rs.getString("title");
+                String type = rs.getString("type");
+                String description = rs.getString("description");
+                String localitation = rs.getString("localitation");
+                int id_societe = rs.getInt("id_societe");
+                int viewed = rs.getInt("viewed");
+                event = new EventEntity(id, date, title, type, description, localitation, id_societe, viewed);
+
+            }
+
+            return event;
+        } catch (SQLException ex) {
+            System.out.println("Erreur :" + ex.getMessage());
+            return null;
+        }
+    }
+
+    public static void UpdateViewedEvent(int idd) {
+        try {
+            conx = BDConnector.driverBD();
+            PreparedStatement pst;
+            rs = stmt.executeQuery("SELECT * FROM evenement WHERE id ='" + idd + "'");
+
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                Date date = rs.getDate("date_at");
+                String title = rs.getString("title");
+                String type = rs.getString("type");
+                String description = rs.getString("description");
+                String localitation = rs.getString("localitation");
+                int id_societe = rs.getInt("id_societe");
+                int viewed = rs.getInt("viewed") + 1;
+                String sql = "UPDATE `evenement` SET `viewed`=? WHERE `id`=?";
+                pst = conx.prepareStatement(sql);
+                pst.setInt(1, viewed);
+                pst.setInt(2, idd);
+                pst.executeUpdate();
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(GestionEvent.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }

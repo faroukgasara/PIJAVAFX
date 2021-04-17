@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pijavafx.events.controller.ClientController">
+<AnchorPane id="AnchorPane" fx:id="rootPane1" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pijavafx.events.controller.ClientController">
    <children>
-      <AnchorPane id="AnchorPane" fx:id="rootPane" layoutX="14.0" layoutY="134.0" prefHeight="346.0" prefWidth="230.0">
+      <AnchorPane id="AnchorPane" fx:id="rootPane2" layoutX="14.0" layoutY="134.0" prefHeight="346.0" prefWidth="230.0">
          <children>
             <Label layoutX="87.0" layoutY="51.0" text="Participate" />
             <TextField fx:id="eventid" layoutX="46.0" layoutY="80.0" />
@@ -45,5 +45,6 @@
             <Font size="18.0" />
          </font>
       </Label>
+      <Button fx:id="back" layoutX="269.0" layoutY="171.0" mnemonicParsing="false" onAction="#back" text="Back" />
    </children>
 </AnchorPane>

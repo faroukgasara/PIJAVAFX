@@ -75,6 +75,12 @@ public class ClientController implements Initializable {
     private TextField recherche;
     @FXML
     private AnchorPane rootPane;
+    @FXML
+    private AnchorPane rootPane1;
+    @FXML
+    private AnchorPane rootPane2;
+    @FXML
+    private Button back;
 
     /**
      * Initializes the controller class.
@@ -120,10 +126,10 @@ public class ClientController implements Initializable {
 
                     try {
                         EventEntity rowData = row.getItem();
-                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/pijavafx/events/gui/updateevent.fxml"));
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/pijavafx/events/gui/eventinfo.fxml"));
                         AnchorPane pane = (AnchorPane) loader.load();
-                        UpdateeventController uc = loader.getController();
-                        uc.getData(rowData);
+                        EventinfoController eic = loader.getController();
+                        eic.Eventinfo(tableEvents.getSelectionModel().getSelectedItem().getId());
                         rootPane.getChildren().setAll(pane);
                     } catch (IOException ex) {
                         Logger.getLogger(AdminEventsController.class.getName()).log(Level.SEVERE, null, ex);
@@ -202,6 +208,16 @@ public class ClientController implements Initializable {
         } catch (MessagingException e) {
         }
 
+    }
+
+     @FXML
+    private void back(ActionEvent event) {
+        try {
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/pijavafx/events/gui/Client.fxml"));
+            rootPane1.getChildren().setAll(pane);
+        } catch (IOException ex) {
+            Logger.getLogger(AdminEventsController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }

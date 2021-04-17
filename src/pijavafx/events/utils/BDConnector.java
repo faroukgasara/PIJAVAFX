@@ -30,8 +30,8 @@ public class BDConnector {
 	public static Connection driverBD() {
 		try {
                         
-			Class.forName("com.mysql.jdbc.Driver");   //protocole appel le packetge du driver du jdbc mysql
-			String url = "jdbc:mysql://localhost:3306/pi";  //nom base.port.jdbc driver
+			Class.forName("com.mysql.jdbc.Driver");  
+			String url = "jdbc:mysql://localhost:3306/pi";  
 			Connection conx = DriverManager.getConnection(url, "root", "");System.out.println("Hello World!");
 			return conx;
 		} catch (Exception e) {

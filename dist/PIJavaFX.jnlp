@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="PIJavaFX.jar" size="68563" download="eager" />
+    <jar href="PIJavaFX.jar" size="79896" download="eager" />
     <jar href="lib\javax.mail.jar" size="659033" download="eager" />
     <jar href="lib\javax.persistence-2.2.1.jar" size="203426" download="eager" />
     <jar href="lib\mysql-connector-java-8.0.23.jar" size="2415211" download="eager" />
