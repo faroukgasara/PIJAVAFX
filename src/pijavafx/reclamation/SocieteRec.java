@@ -19,16 +19,16 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author farou
+ * @author wael
  */
-public class AdminRec extends Application {
+public class SocieteRec extends Application {
     
     @Override
     public void start(Stage primaryStage) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/pijavafx/reclamation/views/reclamationList.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/pijavafx/reclamation/views/societerec.fxml"));
             Scene scene = new Scene(root);
-            primaryStage.setTitle("Admin Reclamations");
+            primaryStage.setTitle("Societe Reclamations");
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException ex) {

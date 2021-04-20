@@ -39,6 +39,12 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Reclamation.findByStatus", query = "SELECT r FROM Reclamation r WHERE r.status = :status")})
 public class Reclamation implements Serializable {
 
+    @Column(name = "status2")
+    private String status2;
+
+    @Column(name = "companyName")
+    private String companyName;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -56,7 +62,7 @@ public class Reclamation implements Serializable {
     private String gsm;
     @Column(name = "created_at")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date createdAt;
+    private String createdAt;
     @Column(name = "status")
     private Boolean status;
     @JoinColumn(name = "company_id", referencedColumnName = "id")
@@ -70,12 +76,22 @@ public class Reclamation implements Serializable {
         this.id = id;
     }
 
-    public Reclamation(Integer id, String message, String motif, String gsm) {
+    public Reclamation(Integer id, String message, String motif, String gsm,String createdAt, String companyName  , String status2) {
         this.id = id;
         this.message = message;
         this.motif = motif;
         this.gsm = gsm;
+        this.createdAt=createdAt;
+        this.companyName=companyName;
+        this.status2 = status2;
+        
     }
+
+    public Reclamation(int id , String message, String motif, String gsm, String createdAt, boolean b) {
+       
+    }
+
+  
 
     public Integer getId() {
         return id;
@@ -109,11 +125,11 @@ public class Reclamation implements Serializable {
         this.gsm = gsm;
     }
 
-    public Date getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 
@@ -156,6 +172,22 @@ public class Reclamation implements Serializable {
     @Override
     public String toString() {
         return "pijavafx.reclamation.entity.Reclamation[ id=" + id + " ]";
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public String getStatus2() {
+        return status2;
+    }
+
+    public void setStatus2(String status2) {
+        this.status2 = status2;
     }
     
 }

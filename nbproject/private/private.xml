@@ -3,7 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
             <file>file:/C:/Users/farou/Desktop/Flutter/1/PIJAVAFX/src/pijavafx/events/controller/EventinfoController.java</file>
+=======
+            <file>file:/C:/Users/leowa/OneDrive/Documents/PI/PIJAVAFX/src/pijavafx/reclamation/controller/AddReclamationController.java</file>
+            <file>file:/C:/Users/leowa/OneDrive/Documents/PI/PIJAVAFX/src/pijavafx/reclamation/controller/UserReclamationController.java</file>
+            <file>file:/C:/Users/leowa/OneDrive/Documents/PI/PIJAVAFX/src/pijavafx/reclamation/views/reclamationList.fxml</file>
+            <file>file:/C:/Users/leowa/OneDrive/Documents/PI/PIJAVAFX/src/pijavafx/events/controller/UpdateeventController.java</file>
+            <file>file:/C:/Users/leowa/OneDrive/Documents/PI/PIJAVAFX/src/pijavafx/reclamation/entity/Reclamation.java</file>
+            <file>file:/C:/Users/leowa/OneDrive/Documents/PI/PIJAVAFX/src/pijavafx/reclamation/service/ReclamationService.java</file>
+            <file>file:/C:/Users/leowa/OneDrive/Documents/PI/PIJAVAFX/src/pijavafx/events/controller/AdminEventsController.java</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>
